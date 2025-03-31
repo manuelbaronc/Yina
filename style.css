@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e60000, #990000); /* Rojo chino */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Para que los koalas no generen scroll */
+}
+
+.container {
+    background: rgba(255, 235, 235, 0.9);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 200, 200, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    z-index: 10; /* Para que aparezca sobre los koalas */
+}
+
+h1 {
+    color: #d23669;
+    margin-bottom: 20px;
+}
+
+#mensaje {
+    font-size: 18px;
+    margin: 20px 0;
+    min-height: 60px;
+}
+
+.banderas {
+    margin: 15px 0;
+    font-size: 40px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background: #e60000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #990000;
+    transform: scale(1.05);
+}
+
+#btnIdioma {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 50, 50, 0.3);
+    border: 1px solid #e60000;
+    color: #e60000;
+}
+
+#lampara {
+    font-size: 60px;
+    margin: 20px 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#extraInfo {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Koalas flotantes */
+.koala {
+    position: absolute;
+    font-size: 30px;
+    animation: flotar 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(100vh) translateX(0);
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px);
+    }
+}
+
+/* Efectos de iluminación */
+.iluminar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 30px #ffd700 !important;
+}
+
+.iluminar-texto {
+    text-shadow: 0 0 10px #ffd700 !important;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    #mensaje {
+        font-size: 16px;
+    }
+}
